@@ -90,7 +90,6 @@ web.run({}, 8888)
 HTTPS方法与HTTP方法相同
 ```javascript
 var web = require('webjs');
-
 var urlRouter = {
         '^(.*)' : 'page.html',
         '^google' : 'http://www.google.com'
@@ -115,6 +114,7 @@ web.runHttps(urlRouter, 8888)
     .get(getRouter)
     .post(postRouter);
 ```
+
 ## 404 Page ##
 ```javascript
 web.set404('404.html');                             //传入一个文件名
