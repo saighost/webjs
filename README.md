@@ -118,8 +118,9 @@ web.runHttps(urlRouter, 8888)
 ## 404 Page ##
 ```javascript
 web.set404('404.html');                             //传入一个文件名
-noMimes 禁止某些文件类型
-
+```
+## noMimes 禁止某些文件类型 ##
+```javascript
 var noMimes = {
         'php' : function (req, res){                    //只传入Request和Response
                 res.send('You can`t request any PHP files');
@@ -134,6 +135,7 @@ var noMimes = {
 web.noMimes(noMimes);
 ```
 自定义 MIME 类型
+
 ```javascript
 web.reg('webp', 'image/webp');
 ```
