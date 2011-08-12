@@ -1,0 +1,26 @@
+{
+  "name": "webjs",
+  "version": "0.2.4",
+  "description": "A HTTP and TCP framework like Webpy for NodeJS.",
+  "homepage": "http://github.com/iwillwen/Web.js",
+  "keywords": [
+    "http",
+    "tcp",
+    "framework",
+    "simple"
+  ],
+  "author": "Will Wen Gunn <i@iwillwen.com> (http://www.iwillwen.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iwillwen/Web.js.git"
+  },
+  "main": "index",
+  "dependencies": {
+	 "mustache" : "=lastest",
+   "formidable" : "=lastest"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 0.4.0"
+  }
+}
