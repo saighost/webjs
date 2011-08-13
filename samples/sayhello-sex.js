@@ -1,14 +1,14 @@
 var web = require('webjs');
 
 var getRouter = {
-	'name\/(.*)': function (req, res, path, qs) {
+	'name\/(.*)': function (req, res) {
 		switch (qs.sex) {
 			case 'woman':
-				res.send('Hi! Miss. ' + decodeURI(path[0]) + '! Nice to meet you.');
+				res.send('Hi! Miss. ' + decodeURI(req.path[0]) + '! Nice to meet you.');
 				break;
 			case 'man':
 			default:
-				res.send('Hey! Mr. ' + decodeURI(path[0]) + '! Nice to meet you.');
+				res.send('Hey! Mr. ' + decodeURI(req.path[0]) + '! Nice to meet you.');
 		}
 	}
 };

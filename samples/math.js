@@ -1,21 +1,21 @@
-var web = require('../index');
+var web = require('webjs');
 var getRouter = {
-	'add/:a/:b': function (req, res, path, qs) {
-		res.send(Number(path.a) + Number(path.b) + '');
+	'add/:a/:b': function (req, res) {
+		res.send(Number(req.path.a) + Number(req.path.b) + '');
 	},
-	'sub/:a/:b': function (req, res, path, qs) {
-		res.send(Number(path.a) - Number(path.b) + '');
+	'sub/:a/:b': function (req, res) {
+		res.send(Number(req.path.a) - Number(req.path.b) + '');
 	},
-	'mul/:a/:b': function (req, res, path, qs) {
-		res.send(Number(path.a) * Number(path.b) + '');
+	'mul/:a/:b': function (req, res) {
+		res.send(Number(req.path.a) * Number(req.path.b) + '');
 	},
-	'div/:a/:b': function (req, res, path, qs) {
-		res.send(Number(path.a) / Number(path.b) + '');
+	'div/:a/:b': function (req, res) {
+		res.send(Number(req.path.a) / Number(req.path.b) + '');
 	},
-	'/:path/:path/:id': function (req, res, path, qs) {
-		res.send(path.id);
+	'/:path/:path/:id': function (req, res) {
+		res.send(req.path.id);
 	}
 };
-web.run({'abc': 'math.js'}, 8888)
+web.run({'abc/:math': '$1.js'}, 8888)
 	.get(getRouter);
 console.log('running');

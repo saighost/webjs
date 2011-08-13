@@ -1,6 +1,6 @@
 {
   "name": "webjs",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A HTTP and TCP framework like Webpy for NodeJS.",
   "homepage": "http://github.com/iwillwen/Web.js",
   "keywords": [
