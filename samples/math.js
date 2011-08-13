@@ -1,17 +1,21 @@
 var web = require('../index');
 var getRouter = {
-	'add\/(.*)\/(.*)': function (req, res, path, qs) {
-		res.send(Number(path[0]) + Number(path[1]) + '');
+	'add/:a/:b': function (req, res, path, qs) {
+		res.send(Number(path.a) + Number(path.b) + '');
 	},
-	'sub\/(.*)\/(.*)': function (req, res, path, qs) {
-		res.send(Number(path[0]) - Number(path[1]) + '');
+	'sub/:a/:b': function (req, res, path, qs) {
+		res.send(Number(path.a) - Number(path.b) + '');
 	},
-	'mul\/(.*)\/(.*)': function (req, res, path, qs) {
-		res.send(Number(path[0]) * Number(path[1]) + '');
+	'mul/:a/:b': function (req, res, path, qs) {
+		res.send(Number(path.a) * Number(path.b) + '');
 	},
-	'div\/(.*)\/(.*)': function (req, res, path, qs) {
-		res.send(Number(path[0]) / Number(path[1]) + '');
+	'div/:a/:b': function (req, res, path, qs) {
+		res.send(Number(path.a) / Number(path.b) + '');
+	},
+	'/:path/:path/:id': function (req, res, path, qs) {
+		res.send(path.id);
 	}
 };
-web.run({}, 8888)
+web.run({'abc': 'math.js'}, 8888)
 	.get(getRouter);
+console.log('running');

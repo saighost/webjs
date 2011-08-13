@@ -16,8 +16,8 @@
   },
   "main": "index",
   "dependencies": {
-	 "mustache" : "=lastest",
-   "formidable" : "=lastest"
+	 "mustache" : "latest",
+   "formidable" : "latest"
   },
   "devDependencies": {},
   "engines": {

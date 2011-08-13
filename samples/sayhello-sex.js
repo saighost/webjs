@@ -1,4 +1,4 @@
-var web = require('../inedx');
+var web = require('webjs');
 
 var getRouter = {
 	'name\/(.*)': function (req, res, path, qs) {
