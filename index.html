@@ -1,53 +1,34 @@
 <!DOCTYPE html>
-<!-- saved from url=(0034)http://iwillwen.github.com/Web.js/ -->
+<!-- saved from url=(0034)http://web.jit.i1m/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <title>Web.js</title>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-25078396-2']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
 <style>
 body {
-    font-size: 16px;
-    line-height: 22px;
-    font-family: Helvetica Neue, Helvetica, Arial;
-    color: #F9F9F9;
-    background: #777;
+		font-size: 14px;
+		line-height: 22px;
+		font-family: Helvetica Neue, Helvetica, Arial;
+		background: #666 url(docs/images/background.png);
+		color: #F9F9F9;
 }
 .interface {
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif !important;
-}
-#ribbon {
-position: fixed;
-top: 0;
-right: 0;
-z-index: 2;
+		font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif !important;
 }
 div#sidebar {
 	background: #888;
 	position: fixed;
 	top: 0;
-    left: 0;
-    bottom: 0;
+		left: 0;
+		bottom: 0;
 	width: 200px;
 	overflow-y: auto;
 	overflow-x: hidden;
 	padding: 15px 0 30px 30px;
 	border-right: 1px solid #ddd;
-    box-shadow: 0 0 20px #ccc;
-    -webkit-box-shadow: 0 0 20px #ccc;
-    -moz-box-shadow: 0 0 20px #ccc;
+		box-shadow: 0 0 20px #ccc;
+		-webkit-box-shadow: 0 0 20px #ccc;
+		-moz-box-shadow: 0 0 20px #ccc;
 }
 	a.toc_title, a.toc_title:visited {
 	display: block;
@@ -63,7 +44,7 @@ div#sidebar {
 	font-weight: normal;
 	}
 	ul.toc_section {
-	font-size: 14px;
+	font-size: 11px;
 	line-height: 14px;
 	margin: 5px 0 0 0;
 	padding-left: 0px;
@@ -165,80 +146,103 @@ code, pre, tt {
 	img.example_image {
 	margin: 0px auto;
 	}</style>
+<script charset="utf-8" id="markit-user-script" src="./index_files/m.js"></script></head>
 <body>
 
 <div id="sidebar" class="interface">
 
-<a class="toc_title" href="http://iwillwen.github.com/Web.js/#">
-	Web.js <span class="version">(0.3.0)</span>
+<a class="toc_title" href="http://iwillwen.github.com/webjs/#">
+	Web.js <span class="version">(0.3.4)</span>
 </a>
 
-<a class="toc_title" href="http://iwillwen.github.com/Web.js/#Introduction">
+<a class="toc_title" href="/#Introduction">
 	Introduction
 </a>
 
-<a class="toc_title" href="http://iwillwen.github.com/Web.js/#Web">
+<a class="toc_title" href="http://iwillwen.github.com/webjs/#Web">
 	Web
 </a>
 <ul class="toc_section">
-	<li>– <a href="http://iwillwen.github.com/Web.js/#Web-run">run</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#Web-get">get</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#Web-post">post</a></li>
-  <li>– <a href="http://iwillwen.github.com/Web.js/#Web-runHttps">runHttps</a></li>
-  <li>– <a href="http://iwillwen.github.com/Web.js/#Web-set404">set404</a></li>
-  <li>– <a href="http://iwillwen.github.com/Web.js/#Web-error">error</a></li>
-  <li>– <a href="http://iwillwen.github.com/Web.js/#Web-noMimes">noMimes</a></li>
-  <li>– <a href="http://iwillwen.github.com/Web.js/#Web-set">set</a></li>
-  <li>– <a href="http://iwillwen.github.com/Web.js/#Web-reg">reg</a></li>
-  <li>– <a href="http://iwillwen.github.com/Web.js/#Web-render">render</a></li>
-  <li>– <a href="http://iwillwen.github.com/Web.js/#Web-net">net</a></li>
+	<li>– <a href="/#Web-create">create</a></li>
+	<li>– <a href="/#Web-run">run</a></li>
+	<li>– <a href="/#Web-use">use</a></li>
+	<li>– <a href="/#Web-get">get</a></li>
+	<li>– <a href="/#Web-post">post</a></li>
+	<li>– <a href="/#Web-put">put</a></li>
+	<li>– <a href="/#Web-delete">delete</a></li>
+	<li>– <a href="/#Web-runHttps">runHttps</a></li>
+	<li>– <a href="/#Web-set404">set404</a></li>
+	<li>– <a href="/#Web-error">error</a></li>
+	<li>– <a href="/#Web-noMimes">noMimes</a></li>
+	<li>– <a href="/#Web-set">set</a></li>
+	<li>– <a href="/#Web-reg">reg</a></li>
+	<li>– <a href="/#Web-config">config</a></li>
+	<li>– <a href="/#Web-render">render</a></li>
+	<li>– <a href="/#Web-net">net</a></li>
 </ul>
 
-<a class="toc_title" href="http://iwillwen.github.com/Web.js/#Request">
+<a class="toc_title" href="/#Request">
 	Request
 </a>
 <ul class="toc_section">
-	<li>– <a href="http://iwillwen.github.com/Web.js/#Request-type">type</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#Request-header">header</a></li>
+	<li>– <a href="/#Request-type">type</a></li>
+	<li>– <a href="/#Request-getHeader">getHeader</a></li>
+	<li>– <a href="/#Response-cookies">cookies</a></li>
+	<li>– <a href="/#Response-sessionStart">sessionStart</a></li>
+	<li>– <a href="/#Response-sessionEnd">sessionEnd</a></li>
 </ul>
 
-<a class="toc_title" href="http://iwillwen.github.com/Web.js/#Response">
+<a class="toc_title" href="/#Response">
 	Response
 </a>
 <ul class="toc_section">
-	<li>– <a href="http://iwillwen.github.com/Web.js/#Response-send">send</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#Response-sendFile">sendFile</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#Response-sendJSON">sendJSON</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#Response-sendJSONP">sendJSONP</a></li>
-	<li>– <a href="javascript:;">cookie</a></li>
-	<li>– <a href="javascript:;">clearCookie</a></li>
+	<li>– <a href="/#Response-send">send</a></li>
+	<li>– <a href="/#Response-sendFile">sendFile</a></li>
+	<li>– <a href="/#Response-sendJSON">sendJSON</a></li>
+	<li>– <a href="/#Response-sendJSONP">sendJSONP</a></li>
+	<li>– <a href="/#Response-long">long</a></li>
+	<li>– <a href="/#Response-sendError">sendError</a></li>
+	<li>– <a href="/#Response-redirect">redirect</a></li>
+	<li>– <a href="/#Response-continue">continue</a></li>
+	<li>– <a href="/#Response-next">next</a></li>
+	<li>– <a href="/#Response-setCookie">setCookie</a></li>
+	<li>– <a href="j/#Response-clearCookie">clearCookie</a></li>
 </ul>
 
-<a class="toc_title" href="http://iwillwen.github.com/Web.js/#URLRouter">
+<a class="toc_title" href="/#URLRouter">
 	URLRouter
 </a>
 <ul class="toc_section">
-	<li>– <a href="http://iwillwen.github.com/Web.js/#URLRouter-key">key</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#URLRouter-origin">origin</a></li>
+	<li>– <a href="/#URLRouter-key">key</a></li>
+	<li>– <a href="/#URLRouter-origin">origin</a></li>
 </ul>
 
-<a class="toc_title" href="http://iwillwen.github.com/Web.js/#GetRouter">
+<a class="toc_title" href="/#GetRouter">
 	GetRouter
 </a>
 <ul class="toc_section">
-	<li>– <a href="http://iwillwen.github.com/Web.js/#GetRouter-key">key</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#GetRouter-path">path</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#GetRouter-qs">QueryString</a></li>
+	<li>– <a href="/#GetRouter-key">key</a></li>
+	<li>– <a href="/#GetRouter-path">req.path</a></li>
+	<li>– <a href="/#GetRouter-qs">req.qs</a></li>
+	<li>– <a href="/#GetRouter-middleware">middleware</a></li>
+	<li>– <a href="/#GetRouter-next">next</a></li>
 </ul>
 
-<a class="toc_title" href="http://iwillwen.github.com/Web.js/#PostRouter">
+<a class="toc_title" href="/#PostRouter">
 	PostRouter
 </a>
 <ul class="toc_section">
-	<li>– <a href="http://iwillwen.github.com/Web.js/#PostRouter-data">req.data</a></li>
-	<li>– <a href="http://iwillwen.github.com/Web.js/#PostRouter-data">req.path</a></li>
+	<li>– <a href="/#PostRouter-data">req.data</a></li>
+	<li>– <a href="/#PostRouter-path">req.path</a></li>
 </ul>
 
+<a class="toc_title" href="/#PutRouter">
+	PutRouter
+</a>
+<ul class="toc_section">
+	<li>– <a href="/#PutRouter-data">req.data</a></li>
+	<li>– <a href="/#PutRouter-data">req.path</a></li>
+</ul>
 </div>
 
 
@@ -250,7 +254,7 @@ code, pre, tt {
 
 <p>
 	<a href="http://github.com/iwillwen/webjs/" style="font-size: 30px">Web.js</a>
-    是一个为了简化 HTTP/TCP 开发而设计的 Web Framework，它致力于以最简单的语法高性能的 Web 应用。它会开放一切API，尽力与其他第三方模块进行最好的配合。
+		是一个为了简化 HTTP/TCP 开发而设计的 Web Framework，它致力于以最简单的语法高性能的 Web 应用。它会开放一切API，尽力与其他第三方模块进行最好的配合。
 	Web.js 最大的特点就是简单化部署、简单化应用、出色的异步性能。
 </p>
 
@@ -260,7 +264,7 @@ code, pre, tt {
 
 <p>
 	你可以在这里反馈意见或提出问题
-	<a href="http://github.com/iwillwen/webjs/issues">GitHub 反馈页面</a>,
+	<a href="http://github.com/iwillwen/Web.js/issues">GitHub 反馈页面</a>,
 	或者在Twitter上与我交流 <a href="https://twitter.com/iwillwen">@iwillwen</a>.
 </p>
 
@@ -278,8 +282,8 @@ code, pre, tt {
 
 <table>
 	<tbody><tr>
-	<td><a href="https://github.com/iwillwen/webjs">Version 0.3.0</a></td>
-	<td><i>22.5kb, 完成的代码和注释</i></td>
+	<td><a href="https://github.com/iwillwen/webjs/zipball/master">Version 0.3.4</a></td>
+	<td><i>323kb, 完成的代码和注释</i></td>
 	</tr>
 </tbody></table>
 
@@ -289,7 +293,7 @@ code, pre, tt {
 	<a href="https://github.com/felixge/node-formidable">node-formidable</a>
 </p>
 
-<h2 id="Upgrading">请升级到 0.2.0+</h2>
+<h2 id="Upgrading">请升级到 0.3.0+</h2>
 
 <p>
 	我会尽量对 <tt>Web.js</tt> 的升级进行无缝向下兼容，但是还是会有不可避免的冲突，所以请您为了保证更新的功能和更好的性能，升级到官方所对应的最新版本。
@@ -323,10 +327,24 @@ web.run();
 <pre class="runnable">require('webjs').run();
 </pre>
 
+<p id="Web-create">
+	<b class="header">create</b><code>web.create(serverType);</code>
+	<br>
+	这个方法可以创建一个webjs Server对象;
+	serverType参数可以传入以下：
+		'http': HTTP服务器,
+		'https': HTTPS服务器
+	默认为HTTP服务器
+</p>
+
+<pre>
+var app = web.create('http');
+</pre>
+
 <p id="Web-run">
 	<b class="header">run</b><code>web.run(urlRouter, port, [host, [backServer]]);</code>
 	<br>
-	这个方法的作用是<b>启动一个服务器</b>，第一个参数是一个<tt><a href="http://iwillwen.github.com/Web.js/#URLRouter">UrlRouter</a></tt>, 第二个参数是这个服务器需要监听的<tt>端口</tt>，第三个参数是需要监听的<tt>域名</tt>，第四个参数是是否返回最后生成的<tt>Server</tt>对象。
+	这个方法的作用是<b>启动一个服务器</b>，第一个参数是一个<tt><a href="/#URLRouter">UrlRouter</a></tt>, 第二个参数是这个服务器需要监听的<tt>端口</tt>，第三个参数是需要监听的<tt>域名</tt>，第四个参数是是否返回最后生成的<tt>Server</tt>对象。
 	(第四个参数是在需要启动多服务器的时候，必须使用的。)
 </p>
 
@@ -352,25 +370,25 @@ Return server:
 <p id="Web-get">
 	<b class="header">get</b><code>web.get(getRouter, [server]);</code>
 	<br>
-	这个方法会给当前或者指定的服务器对象，设置 <tt><a href="http://iwillwen.github.com/Web.js/#GetRouter">GetRouter</a></tt>。
+	这个方法会给当前或者指定的服务器对象，设置 <tt><a href="/#GetRouter">GetRouter</a></tt>。
 </p>
 
 <pre>var getRouter = {
-	'getPost': function (req, res, path, qs) {
+	'getPost': function (req, res) {
 		var post = {
 			title: 'This is a hello world post.',
 			content: 'This is a hello world post, you can login to admin plane to delete this post.'
 		};
 		res.sendJSON(post);
 	},
-	'sayHello/:name': function (req, res, path, qs) {
-		switch (qs.sex) {
+	'sayHello/:name': function (req, res) {
+		switch (req.qs.sex) {
 			case 'woman':
-				res.send('Hi! Miss. ' + decodeURI(path[0]) + '! Nice to meet you.');
+				res.send('Hi! Miss. ' + decodeURI(req.path.name) + '! Nice to meet you.');
 				break;
 			case 'man':
 			default:
-				res.send('Hey! Mr. ' + decodeURI(path[0]) + '! Nice to meet you.');
+				res.send('Hey! Mr. ' + decodeURI(eq.path.name) + '! Nice to meet you.');
 		}
 	}
 };
@@ -380,25 +398,60 @@ web.get(getRouter);
 <p id="Web-post">
 	<b class="header">post</b><code>web.post(postRouter, [server]);</code>
 	<br>
-	这个方法会给当前或者指定的服务器对象，设置 <tt><a href="http://iwillwen.github.com/Web.js/#PostRouter">PostRouter</a></tt>。
+	这个方法会给当前或者指定的服务器对象，设置 <tt><a href="/#PostRouter">PostRouter</a></tt>。
 </p>
 <pre>var postRouter = {
-	'post/:title/:content': function (req, res, path, data) {
-		var html = '&lt;h1&gt;' + path.title + '&lt;/h1&gt;' +
-					'&lt;p&gt;' + path.content + '&lt;/p&gt;';
+	'post/:title/:content': function (req, res) {
+		var html = '&lt;h1&gt;' + req.path.title + '&lt;/h1&gt;' +
+					'&lt;p&gt;' + req.path.content + '&lt;/p&gt;';
 		res.send(html);
 	},
-	'set': function (req, res, path, data) {
-		config[data.key] = data.value;
+	'set': function (req, res) {
+		config[req.data.key] = req.data.value;
 		res.send('Set success.');
 	}
 }
 </pre>
+<p id="Web-put">
+	<b class="header">put</b><code>web.put(putRouter, [server]);</code>
+	<br>
+	这个方法会给当前或者指定的服务器对象，设置 <tt>PutRouter</tt>。
+</p>
+<pre>var putRouter = {
+	'put/:title/:content': function (req, res) {
+		var html = '&lt;h1&gt;' + req.path.title + '&lt;/h1&gt;' +
+					'&lt;p&gt;' + req.path.content + '&lt;/p&gt;';
+		res.send(html);
+	},
+	'set': function (req, res) {
+		config[req.data.key] = req.data.value;
+		res.send('Set success.');
+	}
+}
+web.put(putRouter);
+</pre>
 
+<p id="Web-delete">
+	<b class="header">delete</b><code>web.delete(deleteRouter, [server]);</code>
+	<br>
+	这个方法会给当前或者指定的服务器对象，设置 <tt>PutRouter</tt>。
+</p>
+<pre>var deleteRouter = {
+	'delete/:title/:content': function (req, res) {
+		var html = '&lt;h1&gt;' + req.path.title + '&lt;/h1&gt;' +
+					'&lt;p&gt;' + req.path.content + '&lt;/p&gt;';
+		res.send(html);
+	},
+	'set': function (req, res) {
+		config[req.data.key] = req.data.value;
+		res.send('Set success.');
+	}
+}
+</pre>
 <p id="Web-runHttps">
 	<b class="header">runHttps</b><code>web.runHttps(urlRouter, port, [host, [backServer]]);</code>
 	<br>
-	这个方法的作用是<b>启动一个HTTPS服务器</b>，第一个参数是一个<tt><a href="http://iwillwen.github.com/Web.js/#URLRouter">UrlRouter</a></tt>, 第二个参数是这个HTTPS服务器需要监听的<tt>端口</tt>，第三个参数是需要监听的<tt>域名</tt>，第四个参数是是否返回最后生成的<tt>httpsServer</tt>对象。
+	这个方法的作用是<b>启动一个HTTPS服务器</b>，第一个参数是一个<tt><a href="/#URLRouter">UrlRouter</a></tt>, 第二个参数是这个HTTPS服务器需要监听的<tt>端口</tt>，第三个参数是需要监听的<tt>域名</tt>，第四个参数是是否返回最后生成的<tt>httpsServer</tt>对象。
 	(第四个参数是在需要启动多服务器的时候，必须使用的。)
 
 </p>
@@ -480,6 +533,16 @@ web.noMimes(noMimesHandlers);
 <pre>web.reg('webp', 'image/webp');
 </pre>
 
+<p id="Web-config">
+	<b class="header">config</b><code>web.config(name, value);</code>
+	<br>
+	这个方法和<a href="/#Web-set">web.set</a>同等功能，但可以对一些特殊设置进行设定，比如mode, view engine, template。
+</p>
+<pre>web.config({
+	'mode': 'dev',
+	'view engine': 'jade'
+})
+</pre>
 <p id="Web-render">
 	<b class="header">render</b><code>web.render(tmplName, view, callback);</code>
 	<br>
@@ -492,7 +555,7 @@ web.noMimes(noMimesHandlers);
 </pre>
 
 <p id="Web-net">
-    <b class="header">net</b><code>web.net(port, callback);</code>
+		<b class="header">net</b><code>web.net(port, callback);</code>
 	<br>
 	这个方法会启动一个TCP服务器，你需要做的是传入一个回调函数，这个函数的唯一一个参数
 	是一个socket对象，你可以按照WebSocket的方法进行编程。
@@ -513,7 +576,7 @@ web.noMimes(noMimesHandlers);
 <h2 id="Request"></h2>
 
 <p>
-    <b>Request</b>是Web.js识别客户端行为的重要判断条件，Web.js会在原有的<b>Request</b>对象上，
+		<b>Request</b>是Web.js识别客户端行为的重要判断条件，Web.js会在原有的<b>Request</b>对象上，
 	增加便捷的操作方法。
 </p>
 
@@ -539,16 +602,70 @@ web.noMimes(noMimesHandlers);
 	}
 };
 </pre>
-<p id="Request-header">
-    <b class="header">header</b><code>req.header(header-key);</code>
+<p id="Request-getHeader">
+		<b class="getHeader">getHeader</b><code>req.getHeader(header-key);</code>
 	<br>
 	返回指定报头的内容。
 </p>
 <pre>var getRouter = {
 	'get': function (req, res) {
-		res.sendJSON(req.header('Content-type'));
+		res.sendJSON(req.getHeader('Content-type'));
 	}
 };
+</pre>
+<p id="Request-cookies">
+		<b class="cookies">cookies</b><code>req.cookies</code>
+	<br>
+	返回指定报头中的cookies。
+</p>
+<pre>
+var getRouter = {
+	'get': function (req, res) {
+		res.sendJSON(req.cookies);
+	}
+};
+web.config('cookiesParse', true)
+	.get(getRouter);
+</pre>
+<p id="Request-sessionStart">
+		<b class="sessionStart">sessionStart</b><code>req.sessionStart()</code>
+	<br>
+	开启该连接的Session
+</p>
+<pre>
+var getRouter = {
+	'getSession': function (req, res) {
+		req.sessionStart();
+		res.sendJSON({
+			id: req.session_id,
+			content: req.session
+		});
+	}
+};
+web.config('sessionParse', true)
+	.get(getRouter);
+</pre>
+<p id="Request-sessionStart">
+		<b class="sessionStart">sessionStart</b><code>req.sessionStart()</code>
+	<br>
+	关闭该连接的Session
+</p>
+<pre>
+var getRouter = {
+	'getSession': function (req, res) {
+		req.sessionStart();
+		res.sendJSON({
+			id: req.session_id,
+			content: req.session
+		});
+	},
+	'endSession': function (req, res) {
+		req.sessionEnd();
+		res.send('Ended');
+	}
+};
+web.config('sessionParse', true)
+	.get(getRouter);
 </pre>
 
 <h2 id="Response"></h2>
@@ -594,7 +711,7 @@ var getRouter = {
 };
 </pre>
 <p id="Response-sendFile">
-    <b class="header">sendFile</b><code>res.sendFile(fileName);</code>
+		<b class="header">sendFile</b><code>res.sendFile(fileName);</code>
 	<br>
 	这个方法可以把一个文件的数据传到客户端。
 </p>
@@ -622,7 +739,7 @@ var getRouter = {
 <p id="Response-sendJSONP">
 	<b class="header">sendJSONP</b><code>res.sendJSONP(oJSON)</code>
 	<br>
-	这个方法可以把一个JSON对象传到客户端，并让客户端执行回调函数。
+	这个方法可以把一个JSON对象传到客户端，并执行回调函数。
 	这个对象可以是数组、对象或者字符串，也可以是像Backbone的Model和Collection。
 </p>
 <pre>var getRouter = {
@@ -634,7 +751,76 @@ var getRouter = {
 	}
 };
 </pre>
-
+<p id="Response-long">
+	<b class="header">long</b><code>res.long(oJSON)</code>
+	<br>
+	开始长连接。
+</p>
+<pre>var getRouter = {
+	'long': function (req, res) {
+		res.long();
+		for (var i = 0; i &lt; 10; i++) {
+			res.send(i);
+		}
+		res.end();
+	}
+};
+</pre>
+<p id="Response-sendError">
+	<b class="header">sendError</b><code>res.sendError(code)</code>
+	<br>
+	这个方法可以返回一个指定的HTTP错误状态。
+</p>
+<pre>var getRouter = {
+	'503': function (req, res) {
+		res.sendError(503);
+	},
+	'404': function (req, res) {
+		res.sendError(404);
+	}
+};
+</pre>
+<p id="Response-redirect">
+	<b class="header">redirect</b><code>res.redirect(url)</code>
+	<br>
+	这个方法可以把连接重定向到一个指定的位置。
+</p>
+<pre>var getRouter = {
+	'google': function (req, res) {
+		res.redirect('http://www.google.com');
+	},
+	'post': function (req, res) {
+		res.redirect('/posts');
+	},
+	'back': function (req, res) {
+		res.redirect('back');
+	}
+};
+</pre>
+<p id="Response-setCookie">
+	<b class="header">setCookie</b><code>res.setCookie(oJSON)</code>
+	<br>
+	这个方法可以设置一个Cookie。
+</p>
+<pre>var getRouter = {
+	'some': function (req, res, next) {
+		res.setCookie('name', 'iwillwen', {maxAge: 3600});
+		next();
+	}
+};
+</pre>
+<p id="Response-clearCookie">
+	<b class="header">clearCookie</b><code>res.clearCookie(oJSON)</code>
+	<br>
+	这个方法可以清除一个指定的Cookie。
+</p>
+<pre>var getRouter = {
+	'some': function (req, res, next) {
+		res.cleartCookie('name');
+		next();
+	}
+};
+</pre>
 <h2 id="URLRouter">UrlRouter</h2>
 
 <p>
@@ -674,13 +860,13 @@ web.run(urlRouter, 8888);
 <p id="GetRouter-key">
 	<b class="header">key</b><code>'getPost/:title'</code>
 	<br>
-	与<a href="http://iwillwen.github.com/Web.js/#URLRouter">UrlRouter</a>相同，支持REST风格的URL映射规则，也同样支持普通的正则表达式。
+	与<a href="/#URLRouter">UrlRouter</a>相同，支持REST风格的URL映射规则，也同样支持普通的正则表达式。
 </p>
 <pre>var getRouter = {
-	'getPost/:title': function (req, res, path, qs) {
+	'getPost/:title': function (req, res) {
 		......
 	},
-	'getRows\/(.*)': function (req, res, path, qs) {
+	'getRows\/(.*)': function (req, res) {
 		......
 	}
 };
@@ -707,6 +893,41 @@ web.get(getRouter);
 	title: 'Hello World',
 	id: '4'
 }
+</pre>
+<p id="GetRouter-middleware">
+	<b class="header">middleware</b><code>iform()</code>
+	<br>
+	可以传入一个指定的中间件
+</p>
+<pre>
+var _ = web._;
+var getRouter = {
+	'getPost/:title': _(iform(), function (req, res) {
+		......
+	}),
+	'getRows\/(.*)': _(iform(), function (req, res) {
+		......
+	})
+};
+web.get(getRouter);
+</pre>
+
+<p id="GetRouter-next">
+	<b class="header">next</b><code>iform()</code>
+	<br>
+	继续下一个Handler。
+</p>
+<pre>
+var _ = web._;
+var getRouter = {
+	'getPost/:title': function (req, res, next) {
+		next()
+	},
+	'getRows\/(.*)': function (req, res) {
+		......
+	}
+};
+web.get(getRouter);
 </pre>
 
 <h2 id="PostRouter">PostRouter</h2>
@@ -736,11 +957,32 @@ web.get(getRouter);
 }
 </pre>
 
-......
 
-</div>
-<a href="http://github.com/iwillwen/webjs"> 
-		  <img alt="Fork me on GitHub" id="ribbon" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" data-markzhi="registered"> 
-</a>
+<h2 id="PutRouter">PutRouter</h2>
 
-</body></html>
+<p>
+	PutRouter在内部处理方面与GetRouter不同，依靠第三方解析模块formidable对Post信息进行解析，并传入参数。
+</p>
+
+<p id="PutRouter-path">
+	<b class="header">req.path</b><code>{title: 'Hello World'}</code>
+	<br>
+	与GetRouter的path相同，是路由规则中的位置域的数据返回。
+</p>
+<pre>req.path =&gt; {
+	title: 'Hello World',
+	id: '4'
+}
+</pre>
+
+<p id="PutRouter-data">
+	<b class="header">req.qs</b><code>{title: 'Hello World'}</code>
+</p>
+<pre>req.data =&gt; {
+	title: 'Hello World',
+	author: 'Foobar',
+	content: 'This is the first post in the blog'
+}
+</pre>
+
+</div></body></html>
