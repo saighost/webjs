@@ -14,7 +14,7 @@
     "jade": "latest",
     "commander": "0.3.2",
     "mkdirp": "0.0.7",
-    "asynclist": "0.0.1",
+    "asynclist": "0.0.2",
     "formidable": "latest",
     "eventproxy": "latest",
     "emitter": "latest"
