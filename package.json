@@ -17,7 +17,8 @@
     "asynclist": "latest",
     "formidable": "latest",
     "eventproxy": "latest",
-    "emitter": "latest"
+    "emitter": "latest",
+    "bufferhelper": "latest"
   },
   "bin": {"webjs": "./bin/webjs"},
   "devDependencies": {
