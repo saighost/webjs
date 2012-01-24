@@ -11,6 +11,7 @@ program
     .version(web.version)
     .option('-c, --cookie', 'Add cookie support')
     .option('-s, --session', 'Add session support')
+    .option('-b, --body', 'Add body parser support')
     .option('--mustache', 'Add mustache template engine supportt (defaults to jade)')
     .option('--ejs', 'Add ejs template engine supportt (defaults to jade)')
     .option('--dev', 'Set the development mode (defaults to production)')
@@ -64,6 +65,7 @@ var index = [
     '        .use(web.static(__dirname + \'/../public\'))',
     (program.cookie ? '        .use(web.cookieParser())' : ''),
     (program.session ? '        .use(web.session())' : ''),
+    (program.body ? '        .use(web.bodyParser())' : ''),
     '        .extend(__dirname + \'/router\');',
     '}'
 ].join('\r\n');
@@ -137,7 +139,6 @@ mkdir(path, function(){
             [path + '/controllers/index.js', index],
             [path + '/controllers/router.js', router],
             [path + '/views/hello.jade', hello],
-            [path + '/views/style.css', css],
             [path + '/server.js', server]
         ];
         var _list = files.map(function (file) {
