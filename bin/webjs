@@ -12,6 +12,7 @@ program
     .option('-c, --cookie', 'Add cookie support')
     .option('-s, --session', 'Add session support')
     .option('-b, --body', 'Add body parser support')
+    .option('-r, --rest', 'Add more HTTP methods support')
     .option('--mustache', 'Add mustache template engine supportt (defaults to jade)')
     .option('--ejs', 'Add ejs template engine supportt (defaults to jade)')
     .option('--dev', 'Set the development mode (defaults to production)')
@@ -60,6 +61,7 @@ var index = [
     '        .config({',
     '            \'view engine\': \'' + program.template + '\',',
     '            \'views\': __dirname + \'/../views\',',
+    (program.rest ? '            \'readonly\': false,' : ''),
     '            \'mode\': \'' + program.mode  + '\'',
     '        })',
     '        .use(web.static(__dirname + \'/../public\'))',
