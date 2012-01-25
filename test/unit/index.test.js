@@ -1,4 +1,4 @@
-var web = require('index.js');
+var web = require('webjs');
 var assert = require('assert');
 module.exports = {
     test1: function () {

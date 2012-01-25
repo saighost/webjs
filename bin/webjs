@@ -2,28 +2,95 @@
 
 //CLI
 
-var web = require('../');
+var web = require('webjs');
 var program = require('commander');
 var mkdirp = require('mkdirp');
 var fs = require('fs');
 var asynclist = require('asynclist');
 program
     .version(web.version)
+    .usage('[option] <value..>')
     .option('-c, --cookie', 'Add cookie support')
     .option('-s, --session', 'Add session support')
     .option('-b, --body', 'Add body parser support')
     .option('-r, --rest', 'Add more HTTP methods support')
-    .option('--mustache', 'Add mustache template engine supportt (defaults to jade)')
-    .option('--ejs', 'Add ejs template engine supportt (defaults to jade)')
-    .option('--dev', 'Set the development mode (defaults to production)')
-    .parse(process.argv);
+    .option('--mustache', 'Add mustache template engine support (defaults to jade)')
+    .option('--ejs', 'Add ejs template engine support (defaults to jade)')
+    .option('--tmpl <engine>', 'Set the template engine')
+    .option('--mode <mode>', 'Set the mode (defaults to production)')
+    .on('--help', function(){
+        console.log('  Examples:');
+        console.log('');
+        console.log('    $ webjs');
+        console.log('    $ webjs init -s -c -b -r --mode pro');
+        console.log('    $ webjs run 8080');
+        console.log('');
+    });
 
+var path = program.args.shift() || '.';
+program
+    .command('run <port>')
+    .description('run a simple http server here')
+    .action(function (port) {
+        web.run(port)
+            .use(web.static(path));
+    });
+
+program
+    .command('init')
+    .description('Initialize a webjs app here')
+    .action(function () {
+        program.inite = true;
+        mkdir(path, function(){
+            //Public
+            var paths = [
+                path + '/static',
+                path + '/controllers',
+                path + '/modules',
+                path + '/views',
+                path + '/static/js',
+                path + '/static/css'
+            ];
+            var list = paths.map(function (_path) {
+                return function () {
+                    mkdir(_path, function () {
+                        tasks.trigger(_path);
+                    });
+                };
+            });
+            var tasks = new asynclist(list);
+            tasks.assign(function () {
+                var files = [
+                    [path + '/static/css/style.css', css],
+                    [path + '/static/index.html', index_html],
+                    [path + '/controllers/index.js', index],
+                    [path + '/controllers/router.js', router],
+                    [path + '/views/hello.jade', hello],
+                    [path + '/server.js', server]
+                ];
+                var _list = files.map(function (file) {
+                    return function () {
+                        write(file[0], file[1], function () {
+                            filesTasks.trigger(file);
+                        });
+                    };
+                });
+                var filesTasks = new asynclist(_list);
+                filesTasks.assign(function () {
+                    console.log('Enjoy!');
+                    process.exit(1);
+                });
+                filesTasks.run();
+            });
+            tasks.run();
+        });
+    });
+program.parse(process.argv);
 program.template = 'jade';
 if (program.mustache) program.template = 'mustache';
 if (program.ejs) program.template = 'ejs';
-program.mode = 'pro';
+program.mode = program.mode || 'pro';
 if (program.dev) program.mode = 'dev';
-var path = program.args.shift() || '.';
 
 var index_html = [
     '<!DOCTYPE html>',
@@ -64,7 +131,7 @@ var index = [
     (program.rest ? '            \'readonly\': false,' : ''),
     '            \'mode\': \'' + program.mode  + '\'',
     '        })',
-    '        .use(web.static(__dirname + \'/../public\'))',
+    '        .use(web.static(__dirname + \'/../static\'))',
     (program.cookie ? '        .use(web.cookieParser())' : ''),
     (program.session ? '        .use(web.session())' : ''),
     (program.body ? '        .use(web.bodyParser())' : ''),
@@ -97,65 +164,25 @@ var hello = [
     (program.session ? '    p You had refreshed #{times} times' : '')
 ].join('\r\n');
 
-function emptyDirectory(path, fn) {
+function emptyDirectory (path, fn) {
   fs.readdir(path, function(err, files){
     if (err && 'ENOENT' != err.code) throw err;
     fn(!files || !files.length);
   });
 }
-function write(path, str, fn) {
+function write (path, str, fn) {
   fs.writeFile(path, str, function () {
     console.log('   \x1b[36mcreate\x1b[0m : ' + path);
     fn();
   });
 }
-function mkdir(path, fn) {
+function mkdir (path, fn) {
   mkdirp(path, 0755, function(err){
     if (err) throw err;
     console.log('   \033[36mcreate\033[0m : ' + path);
     fn && fn();
   });
 }
-mkdir(path, function(){
-    //Public
-    var paths = [
-        path + '/public',
-        path + '/controllers',
-        path + '/modules',
-        path + '/views',
-        path + '/public/js',
-        path + '/public/css'
-    ];
-    var list = paths.map(function (_path) {
-        return function () {
-            mkdir(_path, function () {
-                tasks.trigger(_path);
-            });
-        };
-    });
-    var tasks = new asynclist(list);
-    tasks.assign(function () {
-        var files = [
-            [path + '/public/css/style.css', css],
-            [path + '/public/index.html', index_html],
-            [path + '/controllers/index.js', index],
-            [path + '/controllers/router.js', router],
-            [path + '/views/hello.jade', hello],
-            [path + '/server.js', server]
-        ];
-        var _list = files.map(function (file) {
-            return function () {
-                write(file[0], file[1], function () {
-                    filesTasks.trigger(file);
-                });
-            };
-        });
-        var filesTasks = new asynclist(_list);
-        filesTasks.assign(function () {
-            console.log('Enjoy!');
-            process.exit(1);
-        });
-        filesTasks.run();
-    });
-    tasks.run();
-});
+function list (val) {
+    return val.split(',');
+}
