@@ -46,7 +46,7 @@ program
             var paths = [
                 path + '/static',
                 path + '/controllers',
-                path + '/modules',
+                path + '/models',
                 path + '/views',
                 path + '/static/js',
                 path + '/static/css'
