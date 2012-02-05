@@ -236,7 +236,7 @@ You can use it to modular your app functions.
 
 (The MIT License)
 
-Copyright (c) 2009-2011 TJ Holowaychuk &lt;tj@vision-media.ca&gt;
+Copyright (c) 2010-2012 Will Wem Gunn (甘超阳) &lt;willwengunn@gmail.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
