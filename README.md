@@ -35,7 +35,7 @@ or
     web.run(80)  //Run the first http server 启动首个服务器
         .url(urlRouter) //Set the url router 传入URL映射规则
         .get(getRouter) //Set the get method router 传入GET方法规则
-        .post(postRouter);  //Set the post method router 传入POST方法规则
+        .post(postRouter)  //Set the post method router 传入POST方法规则
         .use(web.bodyParser()); //Use the Body Parser
 
 # Simple Deployment 简单化部署
